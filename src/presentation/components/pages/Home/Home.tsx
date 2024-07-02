@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import { Navbar } from '../../organisms/Navbar';
+
 import * as Style from './style';
 
 const Home = () => {
