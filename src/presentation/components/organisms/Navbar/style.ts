@@ -17,9 +17,10 @@ export const IconContainer = styled.div`
   height: 80px;
   margin-left: 10rem;
   margin-right: 2rem;
+  cursor: pointer;
 `;
 
 export const SearchBarContainer = styled.div`
   width: 100%;
-  margin-right: 12rem;
+  margin-right: 10rem;
 `;

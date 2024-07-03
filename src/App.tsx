@@ -19,16 +19,16 @@ function App() {
     <>
       <GlobalStyle />
       <Style.ContainerStyled>
-        <Layout>
-          <BrowserRouter>
+        <BrowserRouter>
+          <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/product-list" element={<ProductList />} />
-              <Route path="/product-detail" element={<ProductDetail />} />
+              <Route path="/items" element={<ProductList />} />
+              <Route path="/items/:id" element={<ProductDetail />} />
               <Route path="*" element={<Home />} />
             </Routes>
-          </BrowserRouter>
-        </Layout>
+          </Layout>
+        </BrowserRouter>
       </Style.ContainerStyled>
     </>
   )

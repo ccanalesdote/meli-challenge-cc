@@ -1,14 +1,16 @@
+import React from 'react';
 import * as Style from './style';
 
 type Props = {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 };
 
-const Input = (props: Props) => {
+const Input = (props: Props, ref: React.Ref<HTMLInputElement>) => {
 
-  const { placeholder, value, onChange } = props;
+  const { placeholder, value, onChange, onKeyDown } = props;
 
   return (
     <>
@@ -17,9 +19,11 @@ const Input = (props: Props) => {
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        onKeyDown={onKeyDown}
+        ref={ref}
       />
     </>
   );
 };
 
-export default Input;
+export default React.forwardRef(Input);

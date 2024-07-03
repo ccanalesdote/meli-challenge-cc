@@ -5,7 +5,6 @@ type Props = {
   alt: string;
 };
 
-// const Icon = ({ src, alt }) => {
 const Icon = (props: Props) => {
 
   const { src, alt } = props;
