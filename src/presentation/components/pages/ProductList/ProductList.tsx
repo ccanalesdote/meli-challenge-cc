@@ -44,15 +44,17 @@ const ProductList = () => {
         <Breadcrumb items={categories} />
         <Style.ProductListCard>
           {
-            (products && products.length > 0) ? products.map((item, index) => {
+            (products && products.length > 0) && products.map((item, index) => {
               return (
                 <div key={index}>
                   <ProductCard openDetail={openDetail} product={item} />
                   {index < products.length - 1 && <Style.Divider />}
                 </div>
               )
-            }) :
-              <NoResults />
+            })
+          }
+          {
+            (products && products.length < 1) && <NoResults />
           }
         </Style.ProductListCard>
       </Style.Container>

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 type Props = {
   currency: string;
   amount: number;
@@ -7,14 +9,28 @@ type Props = {
 const Price = (props: Props) => {
 
   const { currency, amount, decimals } = props;
+  const [isValid, setIsValid] = useState(false);
 
-  const formattedPrice = new Intl.NumberFormat('es-AR', {
+  useEffect(() => {
+    const isValidPrice =
+      currency !== null && currency !== '' &&
+      amount !== null && amount !== undefined &&
+      decimals !== null && decimals !== undefined;
+
+    setIsValid(isValidPrice);
+  }, [currency, amount, decimals]);
+
+  const formattedPrice = isValid ? new Intl.NumberFormat('es-AR', {
     style: 'currency',
     currency: currency,
     minimumFractionDigits: decimals,
-  }).format(amount);
+  }).format(amount) : '';
 
-  return (<>{formattedPrice}</>);
+  return (
+    <>
+      {formattedPrice}
+    </>
+  );
 
 };
 

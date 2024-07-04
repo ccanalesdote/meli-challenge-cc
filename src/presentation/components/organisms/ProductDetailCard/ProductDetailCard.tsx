@@ -2,7 +2,9 @@ import { Image } from '../../atoms/Image';
 import { Product } from '../../../../models';
 
 import * as Style from './style';
+
 import { DescriptionCard } from '../../molecules/DescriptionCard';
+import { Information } from '../../molecules/Information';
 
 type Props = {
   product: Product;
@@ -29,10 +31,7 @@ const ProductCard = (props: Props) => {
 
         <Style.ContainerInfo>
 
-          <Style.TextStyled>{product.condition} - {product.sold_quantity} vendidos</Style.TextStyled>
-          <Style.TitleStyled>{product.title}</Style.TitleStyled>
-          <Style.PriceStyled>$&nbsp;{product.price.amount}</Style.PriceStyled>
-          <Style.ButtonStyled>Comprar</Style.ButtonStyled>
+          <Information product={product} />
 
         </Style.ContainerInfo>
 

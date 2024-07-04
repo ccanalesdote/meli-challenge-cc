@@ -41,6 +41,7 @@ const SearchBar = () => {
     <>
 
       <Style.Container>
+
         <Style.InputContainer>
           <Input
             placeholder={placeholder}
@@ -49,9 +50,11 @@ const SearchBar = () => {
             onKeyDown={handleKeyDown}
             ref={inputRef} />
         </Style.InputContainer>
+        
         <Style.IconContainer onClick={handleSearch}>
           <Icon src={iconPath} alt="Logo_ML" />
         </Style.IconContainer>
+
       </Style.Container>
 
     </>

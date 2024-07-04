@@ -14,6 +14,7 @@ export const TextContainer = styled.div`
 export const TitleStyled = styled.span`
   text-align: start;
   font-size: 24px;
+  font-weight: bold;
   line-height: 0.8;
   margin-top: 32px;
   color: #000;
