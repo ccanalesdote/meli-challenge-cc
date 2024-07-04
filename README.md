@@ -4,8 +4,8 @@ Este proyecto es una solución al challenge de Mercado Libre, implementado como 
 
 Este proyecto consta de dos repositorios:
 
-- [Frontend/Challenge Meli](https://github.com/ccanalesdote/meli-challenge-cc) desarrollado en React + Typescript
-- [Backend/Challenge Meli](https://github.com/ccanalesdote/meli-challenge-backend-cc) desarrollado con Node y Express
+- [Frontend@Challenge Meli](https://github.com/ccanalesdote/meli-challenge-cc) desarrollado en React + Typescript
+- [Backend@Challenge Meli](https://github.com/ccanalesdote/meli-challenge-backend-cc) desarrollado con Node y Express
 
 ## Tecnologías Utilizadas
 
@@ -22,9 +22,7 @@ Algunas de las tecnologías solo están implementadas de forma minima a modo de 
 
 - **Node.js y npm:** Asegúrate de tener instalados Node.js y un gestor de paquetes como npm.
 
-- **Backend en ejecución:** Este frontend depende del backend para funcionar correctamente. Clona y ejecuta el backend desde el siguiente enlace:
-
-https://github.com/ccanalesdote/meli-challenge-backend-cc
+- **Backend en ejecución:** Este frontend depende del backend para funcionar correctamente. Debes clonar y ejecutar el backend desde el siguiente enlace: [meli-challenge-backend-cc](https://github.com/ccanalesdote/meli-challenge-backend-cc)
 
 ## Instalación y Uso
 
@@ -66,11 +64,12 @@ El buscador te permite encontrar productos dentro del siguiente catálogo:
 - Apple iPod Touch 5g 32gb Rosa (Caja Abierta)
 - Apple iPod Touch 32gb Verde
 - Apple iPod Touch 4g 32gb Plata
-- Simplemente escribe el nombre del producto o parte de él en la barra de búsqueda y los resultados se actualizarán automáticamente.
+
+Simplemente escribe el nombre del producto o parte de él en la barra de búsqueda y los resultados se actualizarán automáticamente.
 
 ## Estructura del Proyecto
 
-´´´
+```
 src/
 ├── interceptors/      # Interceptores para Axios (manejo de errores, etc.)
 ├── models/            # Definiciones de tipos de datos y interfaces
@@ -85,7 +84,7 @@ src/
 ├── App.tsx            # Componente principal de la aplicación
 ├── index.tsx          # Punto de entrada del proyecto
 ├── ...                # Otros archivos de configuración (vite.config.ts, etc.)
-´´´
+```
 
 ## Scripts Disponibles
 
