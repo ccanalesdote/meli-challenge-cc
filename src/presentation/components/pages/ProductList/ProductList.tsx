@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { resetSearch } from '../../../../redux/states/search';
+
 import { Product } from '../../../../models';
 import { getProductsService } from '../../../../services/search.service';
 
@@ -12,6 +15,7 @@ import * as Style from './style';
 
 const ProductList = () => {
 
+  const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const searchTerm = searchParams.get("search") ?? '';
   const navigate = useNavigate();
@@ -20,12 +24,10 @@ const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    console.log(searchTerm);
 
     const getProducts = async () => {
       try {
-        const response = await getProductsService(searchTerm);
-        console.log('response', response);
+        const response = await getProductsService(searchTerm);        
         setCategories(response.categories);
         setProducts(response.items);
       } catch (error) {
@@ -39,18 +41,19 @@ const ProductList = () => {
 
   const openDetail = (id: string) => {
     navigate(`/items/${id}`);
+    dispatch(resetSearch());
   }
 
   return (
     <>
       <Style.Container>
-        <Breadcrumb data-testid="breadcrumb" items={categories} />
+        <Breadcrumb items={categories} />
         <Style.ProductListCard>
           {
             (products && products.length > 0) && products.map((item, index) => {
               return (
                 <div key={index}>
-                  <ProductCard data-testid="product-card" product-card openDetail={openDetail} product={item} />
+                  <ProductCard product-card openDetail={openDetail} product={item} />
                   {index < products.length - 1 && <Style.Divider />}
                 </div>
               )

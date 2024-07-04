@@ -81,9 +81,7 @@ describe("SearchBar", () => {
     fireEvent.change(inputElement, { target: { value: 'apple' } });
     
     // Simulamos presionar la tecla enter
-    fireEvent.keyDown(inputElement, { key: 'Enter' });
-
-    console.log(store.getActions());
+    fireEvent.keyDown(inputElement, { key: 'Enter' }); 
 
     // Verificamos que se haya despachado la acción con el valor actualizado
     expect(store.getActions()).toEqual([updateSearch({ value: 'apple' })]);
