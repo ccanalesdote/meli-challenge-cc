@@ -1,8 +1,8 @@
-# Challenge Meli: Buscador y Listado de Productos (Frontend)
+# Challenge Meli: Buscador de Productos (Frontend)
 
 Este proyecto es una solución al challenge de Mercado Libre, implementado como un frontend en React. El buscador permite buscar productos de un catálogo simulado, listarlos y ver su detalle.
 
-Este proyecto consta de dos repositorios:
+El proyecto consta de dos repositorios:
 
 - [Frontend@Challenge Meli](https://github.com/ccanalesdote/meli-challenge-cc) desarrollado en React + Typescript
 - [Backend@Challenge Meli](https://github.com/ccanalesdote/meli-challenge-backend-cc) desarrollado con Node y Express

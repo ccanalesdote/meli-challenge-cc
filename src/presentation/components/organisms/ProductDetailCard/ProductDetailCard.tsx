@@ -10,7 +10,7 @@ type Props = {
   product: Product;
 };
 
-const ProductCard = (props: Props) => {
+const ProductDetailCard = (props: Props) => {
 
   const { product } = props;
 
@@ -41,4 +41,4 @@ const ProductCard = (props: Props) => {
   );
 };
 
-export default ProductCard;
+export default ProductDetailCard;

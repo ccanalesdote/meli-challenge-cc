@@ -20,9 +20,12 @@ const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
+    console.log(searchTerm);
+
     const getProducts = async () => {
       try {
         const response = await getProductsService(searchTerm);
+        console.log('response', response);
         setCategories(response.categories);
         setProducts(response.items);
       } catch (error) {
@@ -41,13 +44,13 @@ const ProductList = () => {
   return (
     <>
       <Style.Container>
-        <Breadcrumb items={categories} />
+        <Breadcrumb data-testid="breadcrumb" items={categories} />
         <Style.ProductListCard>
           {
             (products && products.length > 0) && products.map((item, index) => {
               return (
                 <div key={index}>
-                  <ProductCard openDetail={openDetail} product={item} />
+                  <ProductCard data-testid="product-card" product-card openDetail={openDetail} product={item} />
                   {index < products.length - 1 && <Style.Divider />}
                 </div>
               )

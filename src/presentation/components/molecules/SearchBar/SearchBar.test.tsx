@@ -5,6 +5,7 @@ import { updateSearch } from '../../../../redux/states/search';
 
 import SearchBar from './SearchBar';
 
+// Mock store
 const mockStore = configureStore([]);
 
 describe("SearchBar", () => {
@@ -26,6 +27,7 @@ describe("SearchBar", () => {
       </Provider>
     );
 
+    // Verificamos que el contenedor no sea nulo
     expect(container).toBeTruthy();
 
   });
@@ -38,42 +40,52 @@ describe("SearchBar", () => {
       </Provider>
     );
 
+    // Obtenemos los elementos del contenedor
     const { getByPlaceholderText, getByAltText } = container;
 
+    // Verificamos que se renderice el input y el icono de búsqueda
     expect(getByPlaceholderText(placeholder)).toBeDefined();
     expect(getByAltText('ic_Search')).toBeDefined();
 
   });
 
   test('action dispatch updateSearch on icon click', () => {
+
     const container = render(
       <Provider store={store}>
         <SearchBar />
       </Provider>
     );
 
+    // Simulamos hacer click en el icono de búsqueda
     const iconElement = container.getByAltText('ic_Search');
     fireEvent.click(iconElement);
 
+    // Verificamos que se haya despachado la acción con el valor actualizado
     expect(store.getActions()).toEqual([updateSearch({ value: '' })]);
+
   });
 
   test('Call handleSearch and blur the input when enter is pressed', () => {
+
     const container = render(
       <Provider store={store}>
         <SearchBar />
       </Provider>
     );
 
+    // Obtenemos el input del contenedor
     const inputElement = container.getByPlaceholderText(placeholder) as HTMLInputElement;
 
-    // we simulate typing a new value into the input
+    // Simulamos escribir un nuevo valor en el input
     fireEvent.change(inputElement, { target: { value: 'apple' } });
-
-    // we simulate press enter key
+    
+    // Simulamos presionar la tecla enter
     fireEvent.keyDown(inputElement, { key: 'Enter' });
 
-    // we verify that the action with the updated value has been dispatched
+    console.log(store.getActions());
+
+    // Verificamos que se haya despachado la acción con el valor actualizado
     expect(store.getActions()).toEqual([updateSearch({ value: 'apple' })]);
 
   });
