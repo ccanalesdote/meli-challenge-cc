@@ -52,7 +52,7 @@ const SearchBar = () => {
         </Style.InputContainer>
         
         <Style.IconContainer onClick={handleSearch}>
-          <Icon src={iconPath} alt="Logo_ML" />
+          <Icon src={iconPath} alt="ic_Search" />
         </Style.IconContainer>
 
       </Style.Container>
