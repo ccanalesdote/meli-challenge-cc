@@ -1,17 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+// import { AxiosInterceptor } from './interceptors/axios.interceptor';
+import { ToastContainer } from 'react-toastify';
 
 import { Home } from './presentation/components/pages/Home';
 import { ProductList } from './presentation/components/pages/ProductList';
 import { ProductDetail } from './presentation/components/pages/ProductDetail';
 import { Layout } from './presentation/layout';
 import * as Style from './style';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
   }
 `;
+
+// AxiosInterceptor();
 
 function App() {
 
@@ -29,6 +34,10 @@ function App() {
             </Routes>
           </Layout>
         </BrowserRouter>
+        <ToastContainer
+          position="bottom-right"
+          hideProgressBar
+        />
       </Style.ContainerStyled>
     </>
   )
