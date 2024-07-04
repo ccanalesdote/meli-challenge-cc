@@ -1,30 +1,99 @@
-# React + TypeScript + Vite
+# Challenge Meli: Buscador y Listado de Productos (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una solución al challenge de Mercado Libre, implementado como un frontend en React. El buscador permite buscar productos de un catálogo simulado, listarlos y ver su detalle.
 
-Currently, two official plugins are available:
+Este proyecto consta de dos repositorios:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Frontend/Challenge Meli](https://github.com/ccanalesdote/meli-challenge-cc) desarrollado en React + Typescript
+- [Backend/Challenge Meli](https://github.com/ccanalesdote/meli-challenge-backend-cc) desarrollado con Node y Express
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Algunas de las tecnologías solo están implementadas de forma minima a modo de muestra
 
-- Configure the top-level `parserOptions` property like this:
+- **React:** Biblioteca principal para construir la interfaz de usuario.
+- **TypeScript:** Superset de JavaScript que añade tipado estático para mejorar la calidad del código.
+- **Vite:** Herramienta de construcción rápida y eficiente para proyectos web modernos.
+- **Axios:** Cliente HTTP para realizar peticiones al backend.
+- **Vitest:** Framework de pruebas unitarias y de componentes para React.
+- **Redux:** Patrón de gestión de estado para manejar datos de la aplicación de forma centralizada.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Requisitos Previos
+
+- **Node.js y npm:** Asegúrate de tener instalados Node.js y un gestor de paquetes como npm.
+
+- **Backend en ejecución:** Este frontend depende del backend para funcionar correctamente. Clona y ejecuta el backend desde el siguiente enlace:
+
+https://github.com/ccanalesdote/meli-challenge-backend-cc
+
+## Instalación y Uso
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/ccanalesdote/meli-challenge-cc.git
+cd tu-repositorio
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+4. Si lo deseas puedes ejecutar las pruebas:
+
+```bash
+npm test
+```
+
+## Funcionalidad
+
+El buscador te permite encontrar productos dentro del siguiente catálogo:
+
+- Smartphone Samsung Galaxy S10
+- Smartphone Samsung Galaxy S10 Lite
+- Smartphone Samsung Galaxy S20
+- Televisor LG 43 pulgadas
+- Televisor LG 43 pulgadas 4K
+- Apple iPod Touch 5g 32gb Azul
+- Apple iPod Touch 5g 32gb Rosa (Caja Abierta)
+- Apple iPod Touch 32gb Verde
+- Apple iPod Touch 4g 32gb Plata
+- Simplemente escribe el nombre del producto o parte de él en la barra de búsqueda y los resultados se actualizarán automáticamente.
+
+## Estructura del Proyecto
+
+´´´
+src/
+├── interceptors/      # Interceptores para Axios (manejo de errores, etc.)
+├── models/            # Definiciones de tipos de datos y interfaces
+├── presentation/      # Lógica de presentación (componentes visuales)
+│   └── components/    # Componentes reutilizables (botones, inputs, etc.)
+│   │   ├── atoms/     # Componentes reutilizables con enfoque atómico
+│   │   └── pages/     # Páginas principales de la aplicación
+│   └── layout/        # Estructura del template
+├── redux/             # Configuración de Redux (slices, reducers, etc.)
+├── services/          # Lógica de comunicación con el backend (peticiones Axios)
+├── utils/             # Funciones de utilidad generales
+├── App.tsx            # Componente principal de la aplicación
+├── index.tsx          # Punto de entrada del proyecto
+├── ...                # Otros archivos de configuración (vite.config.ts, etc.)
+´´´
+
+## Scripts Disponibles
+
+- **npm run dev:** Inicia el servidor de desarrollo.
+- **npm run build:** Compila el proyecto para producción.
+- **npm run preview:** Previsualiza la compilación de producción localmente.
+- **npm test:** Ejecuta las pruebas.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.

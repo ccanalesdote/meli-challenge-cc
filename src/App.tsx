@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-// import { AxiosInterceptor } from './interceptors/axios.interceptor';
 import { ToastContainer } from 'react-toastify';
 
 import { Home } from './presentation/components/pages/Home';
@@ -15,8 +14,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 `;
-
-// AxiosInterceptor();
 
 function App() {
 
